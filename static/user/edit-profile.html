@@ -1,0 +1,18 @@
+<h1>Edit your profile</h1>
+<hr>
+<p><b>Username (cannot be changed):</b> <!-- USERNAME --></p>
+<form action="/user/bin/update-homepage.cgi" method="POST" target="homepage-output">
+	<label for="homepage"><b>Homepage:</b></label><br>
+	https://<input type="text" rows="1" maxlength="64" id="homepage" name="homepage" placeholder="<!-- HOMEPAGE -->"><br>
+	<input type="submit" value="Submit">
+</form>
+<iframe style="height: 2lh" name="homepage-output" width="100%" frameborder="0"></iframe>
+<br>
+<form action="/user/bin/update-bio.cgi" method="POST" target="bio-output">
+	<label for="bio"><b>Bio:</b></label><br>
+	<textarea style="resize: none; width: 100%;" rows="6" maxlength="512" id="bio" name="bio"><!-- BIO --></textarea><br>
+	<input type="submit" value="Submit">
+</form>
+<iframe style="height: 2lh" name="bio-output" width="100%" frameborder="0"></iframe>
+<br>
+<a href="/user/my-profile.cgi">Go to my profile</a>

@@ -1,0 +1,13 @@
+<h1>Create an Account</h1>
+<p>To prevent spam, only one account per IP address is permitted.</p>
+<hr>
+<form action="/bin/add-user.cgi" method="POST" target="register-output">
+	<label for="name">Username:</label><br>
+	<input style="width: 100%;" type="text" rows="1" maxlength="32" id="username" name="username"><br>
+	<label for="password">Password:</label><br>
+	<input style="width: 100%;" type="password" rows="1" maxlength="128" id="password" name="password"><br>
+	<label for="confirm">Confirm Password:</label><br>
+	<input style="width: 100%;" type="password" rows="1" maxlength="128" id="confirm" name="confirm"><br>
+	<input type="submit" value="Submit">
+</form>
+<iframe style="height: 2lh; width: 100%" name="register-output" frameborder="0"></iframe>

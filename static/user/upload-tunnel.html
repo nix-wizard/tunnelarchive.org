@@ -1,0 +1,27 @@
+<h1>Create a tunnel</h1>
+<hr>
+<form action="/user/bin/upload-tunnel.cgi" method="POST" target="tunnel-upload-output">
+	<label for="name"><b>Tunnel Name:</b></label><br>
+	<input style="width: 100%;" type="text" rows="1" maxlength="64" id="name" name="name"><br>
+	<br>
+	<label for="data"><b>Tunnel Description:</b> (optional)</label><br>
+	<textarea style="resize: none; width: 100%;" rows="5" maxlength="512" id="description" name="description"></textarea><br>
+	<br>
+	<label for="data"><b>Level List:</b></label><br>
+	<p>Please put a list of each level in this tunnel's level ID, separated by newlines.</p>
+	<textarea style="resize: none; width: 100%;" rows="8" maxlength="1024" id="data" name="data"></textarea><br>
+	<br>
+	<label for="game"><b>Game:</b></label>
+	<select name="game" id="game">
+		<option value="1">Run</option>
+		<option value="2">Run 2</option>
+		<option value="3">Run 3</option>
+		<option value="3.1">Run 3 import/export mod</option>
+	</select><br>
+	<br>
+	<label for="difficulty"><b>Difficulty:</b></label><br>
+	<input type="range" id="difficulty" name="difficulty" min="0" max="10"><br>
+	<br>
+	<input type="submit" value="Submit">
+</form>
+<iframe style="height: 2lh" name="tunnel-upload-output" width="100%" frameborder="0"></iframe>

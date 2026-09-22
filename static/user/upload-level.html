@@ -1,0 +1,40 @@
+<h1>Upload a level</h1>
+<hr>
+<form action="/user/bin/upload-level.cgi" method="POST" target="level-upload-output">
+	<label for="name"><b>Level Name:</b></label><br>
+	<input style="width: 100%;" type="text" rows="1" maxlength="64" id="name" name="name"><br>
+	<br>
+	<label for="data"><b>Level Description:</b> (optional)</label><br>
+	<textarea style="resize: none; width: 100%;" rows="5" maxlength="512" id="description" name="description"></textarea><br>
+	<br>
+	<label for="data"><b>Level Data:</b></label><br>
+	<textarea style="resize: none; width: 100%;" rows="5" maxlength="65536" id="data" name="data"></textarea><br>
+	<br>
+	<label for="game"><b>Game:</b></label>
+	<select name="game" id="game">
+		<option value="1">Run</option>
+		<option value="2">Run 2</option>
+		<option value="3">Run 3</option>
+		<option value="3.1">Run 3 import/export mod</option>
+	</select><br>
+	<br>
+	<label for="difficulty"><b>Difficulty:</b></label><br>
+	<input type="range" id="difficulty" name="difficulty" min="0" max="10"><br>
+	<br>
+	<label for="attribution">If this level is a modified version of a level from this site, the original level's ID is:</label><br>
+	<input type="text" id="attribution" name="attribution" maxlength="8"><br>
+	<br>
+	<p>
+		By publishing this level to tunnelarchive.org, you confirm that are either the original creator the level, or if it is a derivative work, that you are allowed to post it. If this level is derived from a level on this site, indicating so in the required box gives you permission to publish it.<br>
+		All levels published to tunnelarchive.org are published under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license. This means that anyone may copy, redistribute, remix, adapt, or build upon your level provided:
+		<ul>
+			<li><b>Appropriate credit is given.</b></li>
+			<li><b>It is distributed under this same license.</b></li>
+			<li><b>This level is never used for commercial purposes.</b></li>
+		</ul>
+	</p>
+	<input type="checkbox" id="license" name="license" value="accepted"><label for="license">I have read and agree to these terms.</label><br>
+	<br>
+	<input type="submit" value="Submit">
+</form>
+<iframe style="height: 2lh" name="level-upload-output" width="100%" frameborder="0"></iframe>

@@ -1,0 +1,36 @@
+@import url("./font.css");
+
+:root {
+	background-color: rgba(0, 0, 0, 1);
+	background-image: url("/assets/image/skybox.cgi");
+	body {
+		background-color: rgba(200, 200, 200, 0.8);
+		border: 5px solid rgb(50, 50, 50);
+		border-radius: 10px;
+		margin: 3% 20%;
+		padding: 2% 3%;
+		font-size: 14px;
+		color: rgb(0, 0, 0);
+		* {
+			font-family: Comfortaa;
+		}
+		a {
+			color: rgb(110, 240, 110);
+		}
+		input, textarea {
+			margin: 4px 0px;
+			padding: 4px 4px;
+			background-color: rgb(200, 200, 200);
+			border: 2px solid rgb(100, 100, 100);
+			border-radius: 5px;
+			font-size: 14px;
+		}
+		table {
+			border: 1px solid rgb(0, 0, 0);
+			td, th {
+				border: 1px solid rgb(0, 0, 0);
+				text-align: center;
+			}
+		}
+	}
+}

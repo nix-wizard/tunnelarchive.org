@@ -1,0 +1,17 @@
+@import url("./font.css");
+
+:root {
+	background-color: rgba(0, 0, 0, 0);
+	body {
+		margin: 0% 0%;
+		padding: 0% 0%;
+		color: rgb(0, 0, 0);
+		font-size: 14px;
+		* {
+			font-family: Comfortaa;
+		}
+		a {
+			color: rgb(120, 240, 120);
+		}
+	}
+}
