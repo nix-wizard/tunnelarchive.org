@@ -36,16 +36,16 @@ ip="${HTTP_X_REAL_IP}" # ONLY CORRECT WHEN BEHIND THE REVERSE PROXY
 ip="$(sha256sum <<<"$ip" | cut -f 1 -d " ")"
 timestamp="$(date -u +%s%N)"
 
-if ! mkdir "./by-username/$username"; then
-	return_status 403 "This username is already taken."
-fi
-
 if [ "$password" != "$confirm" ]; then
 	return_status 403 "Passwords do not match."
 fi
 
 if [ -h "./by-ip/$ip" ] || [ -e "./by-ip/$ip" ]; then # if this ip has already posted
 	return_status '403' 'Sorry, only one account is allowed per IP.'
+fi
+
+if ! mkdir "./by-username/$username"; then
+	return_status 403 "This username is already taken."
 fi
 
 password="$(openssl passwd -apr1 "$password")"
