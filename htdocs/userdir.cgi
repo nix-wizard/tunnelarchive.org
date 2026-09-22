@@ -7,7 +7,7 @@ shopt -s nullglob
 
 
 enforce 'GET' "$REQUEST_METHOD"
-mkdir -p './users'
+mkdir -p "$db_path/users"
 cd "$db_path/users"
 
 users() {
