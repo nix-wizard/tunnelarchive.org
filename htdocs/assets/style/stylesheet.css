@@ -16,7 +16,23 @@
 			font-family: Comfortaa;
 		}
 		a {
-			color: rgb(110, 240, 110);
+			color: rgb(28, 62, 0);
+			font-weight: bold;
+			background: rgba(83, 179, 3, 0.3);
+			text-decoration: underline;
+			text-underline-offset: 10%;
+		}
+		a:hover {
+			background: rgba(83, 179, 3, 0.6);
+			text-decoration-thickness: 2px;
+		}
+		h1 a {
+			text-underline-offset: 20%;
+			text-decoration-thickness: 2px;
+		}
+		h1 a:hover {
+			text-underline-offset: 20%;
+			text-decoration-thickness: 3px;
 		}
 		input, textarea {
 			margin: 4px 0px;
