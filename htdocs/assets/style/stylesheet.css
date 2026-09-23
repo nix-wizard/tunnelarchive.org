@@ -6,8 +6,9 @@
 	body {
 		background-color: rgba(200, 200, 200, 0.8);
 		border: 5px solid rgb(50, 50, 50);
+		max-width: 900px;
 		border-radius: 10px;
-		margin: 3% 20%;
+		margin: 3% auto;
 		padding: 2% 3%;
 		font-size: 14px;
 		color: rgb(0, 0, 0);
@@ -15,7 +16,23 @@
 			font-family: Comfortaa;
 		}
 		a {
-			color: rgb(110, 240, 110);
+			color: rgb(28, 62, 0);
+			font-weight: bold;
+			background: rgba(83, 179, 3, 0.3);
+			text-decoration: underline;
+			text-underline-offset: 10%;
+		}
+		a:hover {
+			background: rgba(83, 179, 3, 0.6);
+			text-decoration-thickness: 2px;
+		}
+		h1 a {
+			text-underline-offset: 20%;
+			text-decoration-thickness: 2px;
+		}
+		h1 a:hover {
+			text-underline-offset: 20%;
+			text-decoration-thickness: 3px;
 		}
 		input, textarea {
 			margin: 4px 0px;
