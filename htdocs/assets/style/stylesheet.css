@@ -1,9 +1,5 @@
 @import url("./font.css");
 
-.undecorated-link {
-	text-decoration: none;
-	color: inherit;
-}
 
 :root {
 	background-color: rgba(0, 0, 0, 1);
@@ -31,13 +27,10 @@
 			background: rgba(83, 179, 3, 0.6);
 			text-decoration-thickness: 2px;
 		}
-		h1 a {
-			text-underline-offset: 20%;
-			text-decoration-thickness: 2px;
-		}
-		h1 a:hover {
-			text-underline-offset: 20%;
-			text-decoration-thickness: 3px;
+		a.undecorated-link {
+			background: none;
+			text-decoration: none;
+			color: inherit;
 		}
 		input, textarea {
 			margin: 4px 0px;
