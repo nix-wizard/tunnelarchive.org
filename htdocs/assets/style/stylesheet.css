@@ -1,5 +1,10 @@
 @import url("./font.css");
 
+.undecorated-link {
+	text-decoration: none;
+	color: inherit;
+}
+
 :root {
 	background-color: rgba(0, 0, 0, 1);
 	background-image: url("/assets/image/skybox.cgi");
