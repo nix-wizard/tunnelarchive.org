@@ -48,7 +48,7 @@ if ! mkdir "./by-username/$username"; then
 	return_status 403 "This username is already taken."
 fi
 
-password="$(openssl passwd -apr1 "$password")"
+password="$(openssl passwd -apr1 -- "$password")"
 printf '%s:%s\n' "$username" "$password" >> "$db_path/users/.htpasswd"
 
 ln -s "../by-username/$username" "./by-ip/$ip"
