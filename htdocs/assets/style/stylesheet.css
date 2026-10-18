@@ -2,14 +2,14 @@
 
 
 :root {
-	background-color: rgba(0, 0, 0, 1);
+	background-color: #000000;
 	background-image: url("/assets/image/skybox.cgi");
 	body {
-		background-color: rgba(200, 200, 200, 0.8);
-		border: 5px solid rgb(50, 50, 50);
-		max-width: 900px;
-		border-radius: 10px;
-		margin: 3% auto;
+		background-color: #a0a0a0;
+		border: 5px solid #404040;
+		border-top: none;
+		max-width: 800px;
+		margin: 0% auto;
 		padding: 2% 3%;
 		font-size: 14px;
 		color: rgb(0, 0, 0);
@@ -17,14 +17,14 @@
 			font-family: Comfortaa;
 		}
 		a {
-			color: rgb(28, 62, 0);
+			color: #1c3e00;
 			font-weight: bold;
-			background: rgba(83, 179, 3, 0.3);
+			background: #53b3034d;
 			text-decoration: underline;
 			text-underline-offset: 10%;
 		}
 		a:hover {
-			background: rgba(83, 179, 3, 0.6);
+			background: #53b30399;
 			text-decoration-thickness: 2px;
 		}
 		a.undecorated-link {
@@ -35,15 +35,15 @@
 		input, textarea {
 			margin: 4px 0px;
 			padding: 4px 4px;
-			background-color: rgb(200, 200, 200);
-			border: 2px solid rgb(100, 100, 100);
+			background-color: #c8c8c8;
+			border: 2px solid #646464;
 			border-radius: 5px;
 			font-size: 14px;
 		}
 		table {
-			border: 1px solid rgb(0, 0, 0);
+			border: 1px solid #000000;
 			td, th {
-				border: 1px solid rgb(0, 0, 0);
+				border: 1px solid #000000;
 				text-align: center;
 			}
 		}
