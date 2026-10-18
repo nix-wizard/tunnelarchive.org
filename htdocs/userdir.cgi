@@ -11,7 +11,7 @@ mkdir -p "$db_path/users"
 cd "$db_path/users"
 
 users() {
-	userdirs=(./by-username/*/)
+	userdirs=(./by-timestamp/*/)
 	local username
 	local tunnels
 	local levels
