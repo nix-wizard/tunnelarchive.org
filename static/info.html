@@ -1,0 +1,72 @@
+<h1>Site & Privacy Info</h1>
+<hr>
+
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This website is not official, and is not affiliated with Player_03, the creator of the Run Series. Permission was granted to host this website given:</p>
+<ul>
+	<li>The website is noncommercial.</li>
+	<li>The website does not claim to be official.</li>
+</ul>
+
+<h2 id="guidelines">Guidelines</h2>
+<h3 id="guidelines.user">User Guidelines</h3>
+<ol>
+	<li>One account per person.</li>
+	<li>No impersonation.</li>
+	<li>Be nice.</li>
+	<li>The Tunnel Archive is permitted to lock, hide, or remove accounts without limitation.</li>
+</ol>
+<h3 id="guidelines.upload">Uploading</h3>
+<ol>
+	<li>By uploading something, you are granting users of The Tunnel Archive the permanent ability to access it.</li>
+	<li>By uploading a level, you agree that it is to be licensed under the Attribution-NonCommercial-ShareAlike 4.0 International license.</li> 
+	<li>Uploaded levels must be valid level data for the game it's made for.</li>
+	<li>Uploaded levels must be made by you.</li>
+	<li>The "Based on" feature does not mean you're allowed to plagiarize levels. Only upload modified levels that meaningfully deviate from their source.</li>
+	<li>Do not upload levels based on any level that you aren't licensed to copy from or isn't in The Tunnel Archive. If your level is based on a level not present in The Tunnel Archive that you're licensed to copy from, please specify what it's based on in the description.</li>
+	<li>The Tunnel Archive is permitted to hide, remove, lock, or modify any content submitted to the site without limitation.</li>
+</ol>
+
+<h2 id="hosting">Hosting</h2>
+<p>This website is locally hosted from <a href="https://nixwiz.network" target="_blank">my</a> home network. The content is served from my <code>server1</code> server, which is is routed to the internet through a RackNerd VPS's internet connection through my separate <code>server-gateway</code> server.
+<p>Your host -> <code>racknerd-vps</code> -> Frontier -> Router -> <code>server-gateway</code> -> <code>server1</code> 
+
+<h2>Technologies Used</h2>
+<p>This website expects the following technologies to be supported by the end user:</p>
+<ul>
+	<li>HTTPS</li>
+	<li>HTML</li>
+	<li>CSS</li>
+</ul>
+<p>Internally, this website's backend makes use of the following technologies:</p>
+<ul>
+	<li>NGINX</li>
+	<li>FastCGI</li>
+	<li>Bash</li>
+</ul>
+
+<h2 id="privacy">Privacy</h2>
+<p>All requests to this site are permanently logged according to this NGINX log format:</p>
+<p><code>log_format main '[$time_local] REQUEST: $remote_user@$remote_addr $body_bytes_sent "$request" agent:"$http_user_agent" refer:"$http_referer" to host "$http_host" - RESPONSE: $status';</code></p>
+So the following information about each request is logged:
+<ul>
+	<li>IP address</li>
+	<li>User (your username, when requesting anything under /user)</li>
+	<li>Request</li>
+	<li>User Agent</li>
+	<li>Referer</li>
+	<li>Host</li>
+</ul>
+<p>This data is used <b>exclusively</b> for troubleshooting and gathering statistics locally. Log data is <b>never</b> disclosed or shared with any individuals or entities, and is strictly accessible to <code>server-gateway</code> system administrators. As of 2026-10-18, the current <code>server-gateway</code> sysadmins are:</p>
+<ul>
+	<li>nixwiz (<a href="https://nixwiz.network" target="_blank">https://nixwiz.network</a>)</li>
+	<li>stilic (<a href="https://kitty.tel/~stilic/" target="_blank">https://kitty.tel/~stilic/</a>)</li>
+</ul>
+<p>Given the above <code>Hosting</code> section, the following entities technically have the ability to monitor the frequency, timing, and source of any requests to The Tunnel Archive, but not any request data:</p>
+<ul>
+	<li>RackNerd LLC</li>
+	<li>Verizon Communications Inc.</li>
+</ul>
+
+<h2 id="vulnerability">Vulnerability Disclosure</h2>
+<p>If you discover a vulnerability, please <a href="https://nixwiz.network/socials.html" target="_blank">inform me</a> privately so I can fix it as quickly as possible. Thanks!</p>
