@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+exec 2> /tmp/error.log
+
 set -euo pipefail
 shopt -s nullglob
 
@@ -44,8 +46,14 @@ enforce_length "$game" '3'
 enforce_length "$attribution" '8'
 enforce_length "$license" '8'
 enforce_number "$difficulty"
+if [[ ! "$name" =~ ^[A-Za-z0-9_?!:,[:space:]-]+$ ]]; then
+	return_status '400' 'Only A-Z a-z 0-9 ? ! : _ - space , allowed in name.'
+fi
 if [ ! $game == "1" ] && [ ! $game == "2" ] && [ ! $game == "3" ] && [ ! $game == "3.1" ]; then
 	return_status '400' 'Invalid game.'
+fi
+if [[ ! "$data" =~ ^.*+.*$ ]]; then
+	return_status '400' 'Data cannot contain a "+".'
 fi
 if [ ! -z "$attribution" ]; then
 	enforce_number "$attribution"

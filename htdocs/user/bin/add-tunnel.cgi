@@ -39,6 +39,9 @@ enforce_length "$data" '1024'
 enforce_length "$difficulty" '2'
 enforce_length "$game" '3'
 enforce_number "$difficulty"
+if [[ ! "$name" =~ ^[A-Za-z0-9_?!:,[:space:]-]+$ ]]; then
+	return_status '400' 'Only A-Z a-z 0-9 ? ! : _ - space , allowed'
+fi
 if [ ! $game == "1" ] && [ ! $game == "2" ] && [ ! $game == "3" ] && [ ! $game == "3.1" ]; then
 	return_status '400' 'Invalid game.'
 fi

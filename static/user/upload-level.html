@@ -2,7 +2,8 @@
 <hr>
 <form action="/user/bin/add-level.cgi" method="POST" target="level-upload-output">
 	<label for="name"><b>Level Name:</b></label><br>
-	<input style="width: 100%;" type="text" rows="1" maxlength="64" id="name" name="name"><br>
+	<input style="width: 100%;" type="text" rows="1" maxlength="64" id="name" name="name" pattern="^[A-Za-z0-9_?!: ,\-]+$"><br>
+	<small>Allowed characters: A-Z a-z 0-9 _ ? ! : - space ,</small>
 	<br>
 	<label for="data"><b>Level Description:</b> (optional)</label><br>
 	<textarea style="resize: none; width: 100%;" rows="5" maxlength="512" id="description" name="description"></textarea><br>
