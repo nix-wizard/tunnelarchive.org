@@ -41,6 +41,8 @@ data="$(html_escape <<<"$data")"
 difficulty="$(html_escape <<<"$difficulty")"
 attribution="$(html_escape <<<"$attribution")"
 
+data="!name=$name+!author=$author+!id=$levelid+$data"
+
 if [ -z "$attribution" ]; then
 	attribution='None'
 else

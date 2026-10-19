@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+exec 2> /tmp/error.log
+
 set -euo pipefail
 shopt -s nullglob
 
@@ -51,7 +53,6 @@ fi
 
 i=0
 while read -r levelid; do
-	((i=i+1))
 	if [ "$levelid" ]; then
 		levelid="$(strip_newlines "$levelid")"
 		enforce_length "$levelid" 8
@@ -67,13 +68,17 @@ while read -r levelid; do
 			fi
 			return_status '400' "$levelid is not compatible with this tunnel's game."
 		fi
+		((i=i+1))
 	fi
 done <<<"$data"
 count="$i"
+if [ "$count" -le 1 ]; then
+	return_status '400' 'There must be at least two levels in a tunnel.'
+fi
 
 timestamp="$(date -u +%s%N)"
 
-if [ -f ./current-tunnnelid ]; then
+if [ -f ./current-tunnelid ]; then
 	tunnelid="$(<'./current-tunnelid')"
 	((tunnelid=tunnelid+1))
 else
@@ -108,12 +113,12 @@ printf '%s' "$timestamp" > timestamp
 mkdir levels
 i=0
 while read -r levelid; do
-	((i=i+1))
 	levelid="$(strip_newlines "$levelid")"
 	if [ "$levelid" ]; then
-		ln -s "../../../../levels/by-levelid/$levelid" "./levels/$levelid"
+		ln -sf "../../../../levels/by-levelid/$levelid" "./levels/$i"
 		mkdir -p "$db_path/levels/by-levelid/$levelid/tunnels"
-		ln -s "../../../../tunnels/by-tunnelid/$tunnelid" "$db_path/levels/by-levelid/$levelid/tunnels/$tunnelid"
+		ln -sf "../../../../tunnels/by-tunnelid/$tunnelid" "$db_path/levels/by-levelid/$levelid/tunnels/$tunnelid"
+		((i=i+1))
 	fi
 done <<<"$data"
 
@@ -122,8 +127,8 @@ i=0
 for level in ./levels/*/; do
 	levelauthor="$(<"$level/author/username")"
 	if [ ! -L "./levelauthors/$((i+1))" ]; then
-		((i=i+1))
 		ln -s "../../../../users/by-username/$levelauthor" "./levelauthors/$i"
+		((i=i+1))
 	fi
 done
 

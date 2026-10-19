@@ -64,10 +64,18 @@ levels="$(levels)"
 
 levelauthors() {
 	local username
+	declare -A seen=()
+
 	for levelauthor in ./levelauthors/*/; do
 		username="$(<"$levelauthor/username")"
+
+		if [[ ${seen[$username]+_} ]]; then
+			continue;
+		fi
+		seen[$username]=1
+
 		username="$(generate_link "$username" "/profile.cgi?username=$username")"
-		printf '%s' "$username"
+		printf '%s ' "$username"
 	done
 }
 levelauthors="$(levelauthors)"
