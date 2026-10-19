@@ -1,6 +1,5 @@
 @import url("./font.css");
 
-
 :root {
 	background-color: #000000;
 	background-image: url("/assets/image/skybox.cgi");
@@ -48,6 +47,10 @@
 				border: 1px solid #000000;
 				text-align: center;
 			}
+		}
+		code {
+			font-family: monospace;
+			background-color: #888888;
 		}
 	}
 }
