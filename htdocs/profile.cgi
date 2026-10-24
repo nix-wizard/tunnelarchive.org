@@ -39,13 +39,13 @@ else
 	homepage="$(<'./homepage')"
 fi
 
-if [ ! -d './tunnels' ]; then
+if [ ! -f './tunnels/count' ]; then
 	tunnels='0'
 else
 	tunnels="$(<"./tunnels/count")"
 fi
 
-if [ ! -d './levels' ]; then
+if [ ! -f './levels/count' ]; then
 	levels='0'
 else
 	levels="$(<"./levels/count")"

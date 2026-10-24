@@ -22,14 +22,14 @@ users() {
 		username="$(generate_link "$username" "/profile.cgi?username=$username")"
 		username="$(generate_tag 'td' "$username")"
 
-		if [ ! -d "${userdirs[$i]}/tunnels" ]; then
+		if [ ! -f "${userdirs[$i]}/tunnels/count" ]; then
 			tunnels='0'
 		else
 			tunnels="$(<"${userdirs[$i]}/tunnels/count")"
 		fi
 		tunnels="$(generate_tag 'td' "$tunnels")"
 
-		if [ ! -d "${userdirs[$i]}/levels" ]; then
+		if [ ! -f "${userdirs[$i]}/levels/count" ]; then
 			levels='0'
 		else
 			levels="$(<"${userdirs[$i]}/levels/count")"
