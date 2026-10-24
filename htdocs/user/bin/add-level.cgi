@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-exec 2> /tmp/error.log
-
 set -euo pipefail
 shopt -s nullglob
 

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-exec 2> /tmp/error.log
-
 set -euo pipefail
 shopt -s nullglob
 
@@ -64,9 +62,10 @@ while read -r levelid; do
 		levelgame="$(<"$db_path/levels/by-levelid/$levelid/game")"
 		if [ "$game" != "$levelgame" ]; then # Run 3 levels are compatible with the Import/Export mod
 			if [ "$game" == "3.1" ] && [ "$levelgame" == "3" ]; then
-				continue
+				:
+			else
+				return_status '400' "$levelid is not compatible with this tunnel's game."
 			fi
-			return_status '400' "$levelid is not compatible with this tunnel's game."
 		fi
 		((i=i+1))
 	fi
