@@ -45,7 +45,7 @@ levels() {
 	local levelid
 	local author
 	local entry
-	for level in ./levels/*/; do
+	while IFS= read -r level; do
 		levelid="$(<"$level/levelid")"
 
 		name="$(<"$level/name")"
@@ -58,7 +58,7 @@ levels() {
 		entry="$name by $author"
 		entry="$(generate_tag 'li' "$entry")"
 		printf '%s ' "$entry"
-	done
+	done < <(printf '%s\n' ./levels/*/ | sort -V)
 }
 levels="$(levels)"
 
@@ -66,7 +66,7 @@ levelauthors() {
 	local username
 	declare -A seen=()
 
-	for levelauthor in ./levelauthors/*/; do
+	while IFS= read -r levelauthor; do
 		username="$(<"$levelauthor/username")"
 
 		if [[ ${seen[$username]+_} ]]; then
@@ -76,7 +76,7 @@ levelauthors() {
 
 		username="$(generate_link "$username" "/profile.cgi?username=$username")"
 		printf '%s ' "$username"
-	done
+	done < <(printf '%s\n' ./levelauthors/*/ | sort -V)
 }
 levelauthors="$(levelauthors)"
 
