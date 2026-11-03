@@ -27,6 +27,6 @@ header "Content-Disposition: attachment; filename=\"$tunnelid.run.$game.tunnel\"
 header ''
 
 printf '!name=%s+\n!author=%s+\n!id=%s+\n' "$name" "$author" "$tunnelid"
-for level in ./levels/*/; do
+while IFS= read -r level; do
 	printf '%s+\n' "$(<"$level/data")"
-done
+done < <(printf '%s\n' ./levels/*/ | sort -V)
