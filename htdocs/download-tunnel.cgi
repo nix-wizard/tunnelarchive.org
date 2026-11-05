@@ -26,7 +26,7 @@ header 'Content-Type: application/octet-stream'
 header "Content-Disposition: attachment; filename=\"$tunnelid.run.$game.tunnel\""
 header ''
 
-printf '!name=%s+\n!author=%s+\n!id=%s+\n' "$name" "$author" "$tunnelid"
+printf '!name=%s+\n!author=%s+\n!id=%s' "$name" "$author" "$tunnelid"
 while IFS= read -r level; do
-	printf '%s+\n' "$(<"$level/data")"
+	printf '+\n%s' "$(<"$level/data")"
 done < <(printf '%s\n' ./levels/*/ | sort -V)
